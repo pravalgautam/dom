@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Scheme Switcher</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #f5f5f5;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .navbar button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: 2px solid #666;
+      border-radius: 6px;
+    }
+
+    h1 {
+      margin-top: 40px;
+    }
+
+    .color-buttons {
+      margin: 30px auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 300px;
+      gap: 15px;
+    }
+
+    .color-box {
+      width: 100px;
+      height: 100px;
+      border: 2px solid black;
+      cursor: pointer;
+    }
+
+    .color-gray { background-color: gray; }
+    .color-white { background-color: white; }
+    .color-blue  { background-color: blue; }
+    .color-yellow { background-color: yellow; }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <button onclick="window.location.href='#'">Home</button>
+    <button onclick="window.location.href='https://www.youtube.com'">YouTube Channel</button>
+  </div>
+
+  <h1 class="heading">Color Scheme Switcher</h1>
+
+  <div class="color-buttons">
+    <div class="color-box color-gray" id="gray"></div>
+    <div class="color-box color-white" id="white" ></div>
+    <div class="color-box color-blue" id="blue"></div>
+    <div class="color-box color-yellow" id="yellow"></div>
+    <div class="color-box color-white" id="pink"></div>
+  </div>
+
+  <h2>
+    Try clicking on one of the colors above<br>
+    to change the background color of this page!
+  </h2>
+
+ <script>
+   const buttons =  document.querySelectorAll('.color-box')
+     const body =  document.querySelector('body')
+      const heading = document.querySelector('.heading')
+  // console.log(buttons)
+      buttons.forEach((item)=>{
+          console.log(item.innerHTML)
+             item.addEventListener('click', (e) => {
+        console.log(e.target)
+        if (e.target.id === "gray"){
+            body.style.backgroundColor = e.target.id 
+        }
+           if (e.target.id === "blue"){
+            body.style.backgroundColor = e.target.id 
+        }
+             if (e.target.id === "yellow"){
+            body.style.backgroundColor = e.target.id 
+        }
+            if (e.target.id === "white"){
+            body.style.backgroundColor = e.target.id 
+        }
+          if (e.target.id === "pink"){
+            body.style.backgroundColor = e.target.id 
+        }
+      })
+      })
+   
+ </script>
+
+</body>
+</html>
